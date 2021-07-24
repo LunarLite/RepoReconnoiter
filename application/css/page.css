@@ -1,0 +1,96 @@
+/* elements */
+.page-container
+{
+	height: 92vh;
+	width: 65vw;
+	position: absolute;
+	top:0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+.header, .footer
+{
+	padding: 5px;
+	padding-left: 15px;
+	height: 10%;
+	width: 100%;
+	color: #f5a302;
+	background-color: #1e2329;
+	position: relative;
+}
+
+.header
+{
+	border-radius: 5px 5px 0px 0px;
+}
+
+.footer
+{
+	height: 5%;
+	border-radius: 0px 0px 5px 5px;
+}
+
+.footer-content
+{
+	padding-right: 15px;
+	position:absolute;
+	bottom:0;
+	right:0;
+}
+
+.content-container
+{
+	padding: 5px;
+	padding-left: 15px;
+	height: 80%;
+	width: 100%;
+	color: #1e2329;
+	background-color: #fed154;
+}
+
+#browser
+{
+	font-size: 10px;
+	letter-spacing: 1px;
+}
+
+html 
+{
+	background-image: url("../files/nodebg.png");
+	background-repeat: repeat-y repeat-x;
+}
+
+a:link{color: #f4b301;}
+a:visited{color: #fed154;}
+a:hover {color: #f5a302; background:#3b4046;}
+
+*
+{
+	font-family: "Lucida Console", "Courier New", monospace;
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
+
+
+/* attributes */
+.center 
+{
+  margin: auto;
+  padding: 10px;
+}
+
+
+/* Colur schemes
+#1e2329 dark-gray
+#2a2f35 gray
+#3b4046 light-gray
+
+#f5a302 dark-yellow
+#f4b301 yellow
+#fed154 light-yellow
+*/
