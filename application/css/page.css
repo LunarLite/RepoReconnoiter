@@ -49,6 +49,50 @@
 	width: 100%;
 	color: #1e2329;
 	background-color: #fed154;
+	position: relative;
+}
+
+.search-area
+{
+	padding-right: 20px;
+}
+
+.search-input
+{
+	width: 200px;
+}
+
+.sresults-container
+{
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 15px;
+	clear: both;
+}
+
+.image-container
+{
+  position: absolute;
+  top: 15%;
+  left: 35%;
+}
+
+.img-loading 
+{
+	width: 240px;
+	height: 240px;
+  margin:-60px 0 0 -60px;
+  -webkit-animation:spin 4s linear infinite;
+  -moz-animation:spin 4s linear infinite;
+  animation:spin 4s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.loading-caption
+{
+	text-align: justify;
 }
 
 #browser
@@ -82,6 +126,21 @@ a:hover {color: #f5a302; background:#3b4046;}
 {
   margin: auto;
   padding: 10px;
+}
+
+.float-left
+{
+	float: left;
+}
+
+.float-right
+{
+	float: right;
+}
+
+.inline-elements
+{
+  display:inline-block;
 }
 
 

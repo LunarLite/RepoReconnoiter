@@ -9,6 +9,8 @@
 		<title>RepoReconnoiter | Explore your data today!</title>
 
 		<link rel="stylesheet" href="application/css/page.css">
+		<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+		<script src="https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 		<script type="text/javascript" src="application/js/browsing.js"></script>		
 	</head>
 	<body>
@@ -21,9 +23,79 @@
 
 			<!--Content-Container-->
 			<div class="content-container" id="content-container">
-				<p id="browser">/home</p>
-				<div>
-					<h2>Search</h2>
+				<!--Home view-->
+				<div id="home">
+					<div class="float-left">
+						<p>/home</p>
+					</div>
+					<div class="float-right">
+						<p class="search-area">
+							<input class="search-input" name="searchquery" type="text" placeholder="Search for a Repository" name="search">
+							<button type="submit" onclick="search(this);">Search</button>
+						</p>
+					</div>
+					<div class="image-container">
+						<img class="center" src="application/files/github_logo.png" alt="" width="240" height="240">
+						<p class="loading-caption"><center>Hello there!</center></p>
+					</div>
+				</div>
+
+				<!--Search result view-->
+				<div id="sresult">
+					<div class="float-left">
+						<p>/<a onclick="build_home()">home</a>/search result</p>
+					</div>
+					<div class="float-right">
+						<p class="search-area">
+							<input class="search-input" name="searchquery" type="text" placeholder="Search for a Repository" name="search">
+							<button type="submit" onclick="search(this);">Search</button>
+						</p>
+					</div>
+					<div class="sresults-container">
+						<p id="result-count" class="inline-elements">Search Results for 'query' (0)</p>
+					</div>
+					<div class="sresults-container" style="width:100%;height:350px;">
+						<svg id="sresults-svg" style="width:100%;height:100%;"></svg>
+					</div>
+				</div>
+
+				<!--Rate limit view-->
+				<div id="rlimit">
+					<div class="float-left">
+						<p>/<a onclick="build_home()">home</a>/rlimit</p>
+					</div>
+					<div class="float-right">
+						<p class="search-area">
+							<input class="search-input" name="searchquery" type="text" placeholder="Search for a Repository" name="search">
+							<button type="submit" onclick="search(this);">Search</button>
+						</p>
+					</div>
+					<div class="image-container">
+						<img class="center" src="application/files/github_logo.png" alt="" width="240" height="240">
+						<p class="loading-caption"><center>Hit the ratelimit ;(</center></p>
+						<p class="loading-caption"><center>Try again later?</center></p>
+					</div>
+				</div>
+
+				<!--? view-->
+				<div id="?2">
+					<div class="float-left">
+						<p>/<a onclick="build_home()">home</a>/?2view</p>
+					</div>
+					<div class="float-right">
+						<p class="search-area">
+							<input class="search-input" name="searchquery" type="text" placeholder="Search for a Repository" name="search">
+							<button type="submit" onclick="search(this);">Search</button>
+						</p>
+					</div>
+				</div>
+
+				<!--Loading view-->
+				<div id="loading">
+					<div class="image-container">
+						<img class="img-loading center" src="application/files/github_logo.png" alt="loading GH data">
+						<p class="loading-caption"><center>Loading...</center></p>
+					</div>
 				</div>
 			</div>
 
