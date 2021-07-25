@@ -67,7 +67,7 @@ function build_sresults(data, query)
   let container = d3.select('#sresults-svg');
   var results = container.selectAll(".resultText")
     .data(data);
-  console.log(container);
+  
   results.enter()
     .append("text")
     .attr("x",  10)
@@ -118,5 +118,5 @@ function search(button)
   hide_views();
   loading_view.style.display = "block";
   // Get results
-  fetch('https://api.github.com/search/repositories?q=' + value + '&sort=name&order=desc').then(r => r.json()).then(j => build_sresults(j.items, value));
+  fetch('https://api.github.com/search/repositories?q=' + value).then(r => r.json()).then(j => build_sresults(j.items, value));
 }
