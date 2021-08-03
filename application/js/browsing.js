@@ -1,5 +1,6 @@
 window.addEventListener('load', function () 
 {
+  
   init();
 })
 
@@ -24,6 +25,7 @@ function init()
   repository_view = document.getElementById("repository");
   loading_view = document.getElementById("loading");
   views = [home_view, sresult_view, rlimit_view, repository_view, loading_view];
+
   build_home();
 }
 
@@ -160,20 +162,22 @@ function build_ratelimit()
   rlimit_view.style.display = "block";
 }
 
-function search_repositories(button)
+function search_repositories(event, field)
 {
-  let query = button.closest(".float-right").getElementsByClassName("search-input")[0];
-  let value = query.value;
-  query.value = "";
+  event.preventDefault();
+  let value = field.value;
+  field.value = "";
   if (!value || value === "")
   {
-    return
+    return false;
   }
+
 
   hide_views();
   loading_view.style.display = "block";
   // Get results
   fetch('https://api.github.com/search/repositories?q=' + value).then(r => r.json()).then(j => build_sresults(j.items, value));
+  return false;
 }
 
 function search_users(user)
