@@ -1,4 +1,5 @@
-:root {
+:root 
+{
   --yellow-bg: #ffffc2;
   --yellow-on-black: #ffc759;
   --grey-bg: #1e2329;
@@ -173,15 +174,3 @@ a:hover {color: #f5a302; background:#3b4046;}
 {
   display:inline-block;
 }
-
-
-/* Colur schemes
-#1e2329 dark-gray
-#2a2f35 gray
-#3b4046 light-gray
-#595f66 lightest-gray
-
-#f5a302 dark-yellow
-#f4b301 yellow
-#fed154 light-yellow
-*/

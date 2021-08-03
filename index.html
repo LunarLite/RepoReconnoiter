@@ -1,3 +1,4 @@
+
  <!DOCTYPE html>
 
  <html lang="en">
@@ -9,6 +10,7 @@
 		<title>RepoReconnoiter | Explore your data today!</title>
 
 		<link rel="stylesheet" href="application/css/page.css">
+		<link rel="stylesheet" href="application/css/button.css">
 		<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 		<script src="https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 		<script type="text/javascript" src="application/js/browsing.js"></script>		
@@ -28,17 +30,15 @@
 					<div class="float-left">
 						<p>/home</p>
 					</div>
-					<div class="float-right">
-						<p class="search-area">
-							<form onsubmit="search_repositories(event, searchquery)">
-								<input class="search-input" name="searchquery" type="text" placeholder="Search for a Repository" name="search">
-								<button type="submit">Search</button>
-							</form>
-						</p>
-					</div>
 					<div class="image-container">
 						<img class="center" src="application/files/github_logo.png" alt="" width="240" height="240">
 						<p class="loading-caption"><center>Hello there!</center></p>
+						<p class="search-area">
+							<form onsubmit="search_repositories(event, searchquery)" role="search">
+								<input id="search" name="searchquery" type="search" placeholder="Search..." name="search">
+								<button type="submit">Go</button>
+							</form>
+						</p>
 					</div>
 				</div>
 
@@ -49,9 +49,9 @@
 					</div>
 					<div class="float-right">
 						<p class="search-area">
-							<form onsubmit="search_repositories(event, searchquery)">
-								<input class="search-input" name="searchquery" type="text" placeholder="Search for a Repository" name="search">
-								<button type="submit">Search</button>
+							<form onsubmit="search_repositories(event, searchquery)" role="search">
+								<input id="search" name="searchquery" type="search" placeholder="Search..." name="search">
+								<button type="submit">Go</button>
 							</form>
 						</p>
 					</div>
@@ -70,9 +70,9 @@
 					</div>
 					<div class="float-right">
 						<p class="search-area">
-							<form onsubmit="search_repositories(event, searchquery)">
-								<input class="search-input" name="searchquery" type="text" placeholder="Search for a Repository" name="search">
-								<button type="submit">Search</button>
+							<form onsubmit="search_repositories(event, searchquery)" role="search">
+								<input id="search" name="searchquery" type="search" placeholder="Search..." name="search">
+								<button type="submit">Go</button>
 							</form>
 						</p>
 					</div>
@@ -90,9 +90,9 @@
 					</div>
 					<div class="float-right">
 						<p class="search-area">
-							<form onsubmit="search_repositories(event, searchquery)">
-								<input class="search-input" name="searchquery" type="text" placeholder="Search for a Repository" name="search">
-								<button type="submit">Search</button>
+							<form onsubmit="search_repositories(event, searchquery)" role="search">
+								<input id="search" name="searchquery" type="search" placeholder="Search..." name="search">
+								<button type="submit">Go</button>
 							</form>
 						</p>
 					</div>
