@@ -65,7 +65,7 @@
 
 .search-area
 {
-	padding-right: 20px;
+	/*padding-right: 20px;*/
 }
 
 .search-input
@@ -88,9 +88,12 @@
 
 .image-container
 {
+  width: max-content;
   position: absolute;
-  top: 15%;
-  left: 35%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .img-loading 
@@ -158,6 +161,12 @@ a:hover {color: #f5a302; background:#3b4046;}
 {
   margin: auto;
   padding: 10px;
+}
+
+.img-center 
+{
+  display: block;
+  margin: 0 auto;
 }
 
 .float-left
