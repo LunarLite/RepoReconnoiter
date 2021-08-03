@@ -1,3 +1,10 @@
+:root {
+  --yellow-bg: #ffffc2;
+  --yellow-on-black: #ffc759;
+  --grey-bg: #1e2329;
+  --grey-on-yellow: #1e2329;
+}
+
 /* elements */
 .page-container
 {
@@ -17,8 +24,8 @@
 	padding-left: 15px;
 	height: 10%;
 	width: 100%;
-	color: #f5a302;
-	background-color: #1e2329;
+	color: var(--yellow-on-black);
+	background-color: var(--grey-bg);
 	position: relative;
 }
 
@@ -47,13 +54,13 @@
 	padding-left: 15px;
 	height: 80%;
 	width: 100%;
-	color: #1e2329;
-	background-color: #fed154;
+	color: var(--grey-on-yellow);
+	background-color: var(--yellow-bg);
 	position: relative;
 }
 
-.content-container a{color: #3b4046 !important;}
-.content-container a:hover {color: #595f66;background:#f5a302;}
+.content-container a{color: var(--grey-on-yellow) !important;}
+.content-container a:hover {background:#f5a302;}
 
 .search-area
 {
@@ -63,6 +70,11 @@
 .search-input
 {
 	width: 200px;
+}
+
+.search-notification
+{
+	font-size: 10px;
 }
 
 .sresults-container
@@ -113,6 +125,22 @@ html
 a:link{color: #f4b301;}
 a:visited{color: #fed154;}
 a:hover {color: #f5a302; background:#3b4046;}
+
+.svg-tspan
+{
+	fill: #000000;
+}
+
+.svg-url-tspan
+{
+	fill: #595f66;
+}
+
+.svg-url-tspan:hover
+{
+	fill: #0000ff;
+	font-weight: bold;
+}
 
 *
 {

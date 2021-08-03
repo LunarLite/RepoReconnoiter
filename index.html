@@ -3,9 +3,9 @@
  <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name="RepoReconnoiter github visualisation data">
-		<meta name="A visualisation showcasing GH User & Repository data" content="RepoReconnoiter">
-		<meta name="Mick Tozer" content="Github Visualisation">
+		<meta name="RepoReconnoiter github data visualisation">
+		<meta name="A visualisation showcasing GitHub repository data" content="RepoReconnoiter">
+		<meta name="Michael Tozer" content="RepoReconnoiter">
 		<title>RepoReconnoiter | Explore your data today!</title>
 
 		<link rel="stylesheet" href="application/css/page.css">
@@ -31,7 +31,7 @@
 					<div class="float-right">
 						<p class="search-area">
 							<input class="search-input" name="searchquery" type="text" placeholder="Search for a Repository" name="search">
-							<button type="submit" onclick="search(this);">Search</button>
+							<button type="submit" onclick="search_repositories(this);">Search</button>
 						</p>
 					</div>
 					<div class="image-container">
@@ -43,12 +43,12 @@
 				<!--Search result view-->
 				<div id="sresult" style="display:none;">
 					<div class="float-left">
-						<p>/<a onclick="build_home()" href="">home</a>/search result</p>
+						<p>/<a onclick="build_home()" href="javascript:;">home</a>/search results</p>
 					</div>
 					<div class="float-right">
 						<p class="search-area">
 							<input class="search-input" name="searchquery" type="text" placeholder="Search for a Repository" name="search">
-							<button type="submit" onclick="search(this);">Search</button>
+							<button type="submit" onclick="search_repositories(this);">Search</button>
 						</p>
 					</div>
 					<div class="sresults-container">
@@ -62,12 +62,12 @@
 				<!--Rate limit view-->
 				<div id="rlimit" style="display:none;">
 					<div class="float-left">
-						<p>/<a onclick="build_home()" href="">home</a>/rlimit</p>
+						<p>/<a onclick="build_home()" href="javascript:;">home</a>/rlimit</p>
 					</div>
 					<div class="float-right">
 						<p class="search-area">
 							<input class="search-input" name="searchquery" type="text" placeholder="Search for a Repository" name="search">
-							<button type="submit" onclick="search(this);">Search</button>
+							<button type="submit" onclick="search_repositories(this);">Search</button>
 						</p>
 					</div>
 					<div class="image-container">
@@ -77,15 +77,15 @@
 					</div>
 				</div>
 
-				<!--? view-->
-				<div id="?2" style="display:none;">
+				<!--Repository view-->
+				<div id="repository" style="display:none;">
 					<div class="float-left">
-						<p>/<a onclick="build_home()" href="">home</a>/?2view</p>
+						<p>/<a onclick="build_home()" href="javascript:;">home</a>/<a onclick="show_sresults()" href="javascript:;">search results</a>/repository</p>
 					</div>
 					<div class="float-right">
 						<p class="search-area">
 							<input class="search-input" name="searchquery" type="text" placeholder="Search for a Repository" name="search">
-							<button type="submit" onclick="search(this);">Search</button>
+							<button type="submit" onclick="search_repositories(this);">Search</button>
 						</p>
 					</div>
 				</div>
