@@ -65,7 +65,7 @@ function build_sresults(data, query)
 
   // Fix anything to do with data length
   let result_count_text = document.getElementById("result-count");
-  result_count_text.innerHTML = "Search Results for '" + query + "': (" + data.length + ")\
+  result_count_text.innerHTML = "<br>Search Results for '" + query + "' :\
   <br><span class='search-notification'>A maximum of " + max_sresults + " results will be shown</span>";
   if(data.length > max_sresults){data = data.slice(0, max_sresults);} 
 
