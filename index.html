@@ -10,10 +10,13 @@
 		<title>RepoReconnoiter | Explore your data today!</title>
 
 		<link rel="stylesheet" href="application/css/page.css">
-		<link rel="stylesheet" href="application/css/button.css">
+		<link rel="stylesheet" href="application/css/search.css">
 		<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 		<script src="https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-		<script type="text/javascript" src="application/js/browsing.js"></script>		
+		<script src="https://cdn.jsdelivr.net/npm/d3plus@2"></script>
+		<script type="text/javascript" src="application/js/utils.js"></script>
+		<script type="text/javascript" src="application/js/api_calls.js"></script>		
+		<script type="text/javascript" src="application/js/main.js"></script>		
 	</head>
 	<body>
 		<!--Page-Container-->
@@ -25,28 +28,24 @@
 
 			<!--Content-Container-->
 			<div class="content-container" id="content-container">
-				<!--Home view-->
-				<div id="home">
-					<div class="float-left">
-						<p>/home</p>
-					</div>
-					<div class="image-container">
-						<img class="img-center" src="application/files/github_logo.png" alt="" width="240" height="240">
-						<p class="loading-caption"><center>Hello there!</center></p>
-						<p>
-							<form onsubmit="search_repositories(event, searchquery)" role="search">
-								<input id="search" name="searchquery" type="search" autocomplete="off" placeholder="Search Repositories..." name="search">
-								<button type="submit">Go</button>
-							</form>
-						</p>
-					</div>
+
+				<!--History bar-->
+				<div class="float-left">
+					<p id="history">/home</p>
 				</div>
 
-				<!--Search result view-->
+				<!--Home view-->
+				<div id="home" class="image-container">
+					<img class="img-center" src="application/files/github_logo.png" alt="" width="240" height="240">
+					<p class="loading-caption"><center>Hello there!</center></p>
+					<form onsubmit="search_repositories(event, searchquery)" role="search">
+						<input id="search" name="searchquery" type="search" autocomplete="off" placeholder="Search Repositories..." name="search">
+						<button type="submit">Go</button>
+					</form>
+				</div>
+
+				<!--Search results view-->
 				<div id="sresult" style="display:none;">
-					<div class="float-left">
-						<p>/<a onclick="build_home()" href="javascript:;">home</a>/search results</p>
-					</div>
 					<div class="float-right">
 						<p>
 							<form onsubmit="search_repositories(event, searchquery)" role="search">
@@ -61,28 +60,23 @@
 					</div>
 				</div>
 
-				<!--Rate limit view-->
-				<div id="rlimit" style="display:none;">
-					<div class="float-left">
-						<p>/<a onclick="build_home()" href="javascript:;">home</a>/rlimit</p>
-					</div>
+				<!--Error view-->
+				<div id="error" style="display:none;">
 					<div class="image-container">
 						<img class="img-center img-loading " src="application/files/github_logo_error.png" alt="">
-						<p class="loading-caption"><center>You were Rate limited!</center></p>
-						<p>
-							<form onsubmit="search_repositories(event, searchquery)" role="search">
-								<input id="search" name="searchquery" type="search" autocomplete="off" placeholder="Try again later..." name="search">
-								<button type="submit">Go</button>
-							</form>
-						</p>
+						<p class="loading-caption"><center style="font-weight: bold; font-size: 25px;">Oops!</center></p>
+						<p id="error-text" class="loading-caption"><center></center></p>
+					</div>
+					<div class="error-search-container">
+						<form onsubmit="search_repositories(event, searchquery)" role="search">
+							<input id="search" name="searchquery" type="search" autocomplete="off" placeholder="Try again!" name="search">
+							<button type="submit">Go</button>
+						</form>
 					</div>
 				</div>
 
 				<!--Repository view-->
 				<div id="repository" style="display:none;">
-					<div class="float-left">
-						<p>/<a onclick="build_home()" href="javascript:;">home</a>/<a onclick="show_sresults()" href="javascript:;">search results</a>/repository</p>
-					</div>
 					<div class="float-right">
 						<p>
 							<form onsubmit="search_repositories(event, searchquery)" role="search">
@@ -91,6 +85,26 @@
 							</form>
 						</p>
 					</div>
+					<div class="repository-svg" style="width:90%;height:400px;">
+						<p id="repository-title"><br>The 'RepoReconnoiter' repository</p>
+						<svg id="repository-svg" style="width:100%;height:100%;"></svg>
+					</div>
+				</div>
+
+				<!--Graph view-->
+				<div id="graph" style="display:none;">
+					<div class="float-right">
+						<p>
+							<form onsubmit="search_repositories(event, searchquery)" role="search">
+								<input id="search" name="searchquery" type="search" autocomplete="off" placeholder="Search..." name="search">
+								<button type="submit">Go</button>
+							</form>
+						</p>
+					</div>
+					<div class="repository-svg" style="width:90%;height:400px;">
+						<p id="graph-title"><br>A fancy graph!</p>
+						<svg id="repository-svg" style="width:100%;height:100%;"></svg>
+					</div>
 				</div>
 
 				<!--Loading view-->
@@ -98,12 +112,10 @@
 					<div class="image-container">
 						<img class="img-center img-loading" src="application/files/github_logo.png" alt="">
 						<p class="loading-caption"><center>Loading...</center></p>
-						<p>
-							<form onsubmit="search_repositories(event, searchquery)" role="search" style="pointer-events: none;">
-								<input id="search" name="searchquery" type="search" placeholder="Searching Repositories..." name="search">
-								<button type="submit">Go</button>
-							</form>
-						</p>
+						<form onsubmit="search_repositories(event, searchquery)" role="search" style="pointer-events: none;">
+							<input id="search" name="searchquery" type="search" placeholder="Searching Repositories..." name="search">
+							<button type="submit">Go</button>
+						</form>
 					</div>
 				</div>
 			</div>

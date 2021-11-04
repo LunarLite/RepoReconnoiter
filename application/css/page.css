@@ -1,6 +1,7 @@
 :root 
 {
-  --yellow-bg: #ffffc2;
+  --light-yellow-bg: #ffffc2;
+  --yellow-bg: #f9e28b;
   --yellow-on-black: #ffc759;
   --grey-bg: #1e2329;
   --grey-on-yellow: #1e2329;
@@ -73,7 +74,7 @@
 	font-size: 10px;
 }
 
-.sresults-container
+.sresults-container, .repository-svg
 {
 	padding-left: 50px;
 	padding-right: 50px;
@@ -86,6 +87,16 @@
   position: absolute;
   left: 50%;
   top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.error-search-container
+{
+  width: max-content;
+  position: absolute;
+  left: 50%;
+  top: 85%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
@@ -132,12 +143,18 @@ a:hover {color: #f5a302; background:#3b4046;}
 .svg-url-tspan
 {
 	fill: #595f66;
+	cursor: pointer;
 }
 
 .svg-url-tspan:hover
 {
 	fill: #0000ff;
 	font-weight: bold;
+}
+
+.stat-text
+{
+	font-size: 10px;
 }
 
 *
@@ -148,6 +165,17 @@ a:hover {color: #f5a302; background:#3b4046;}
 	-ms-user-select: none; /* IE10+/Edge */
 	user-select: none; /* Standard */
 }
+
+.url-image
+{
+	cursor: pointer;
+}
+
+.graph-option:hover
+{
+	opacity: 0.9;
+}
+
 
 
 /* attributes */
